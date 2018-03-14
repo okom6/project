@@ -1,0 +1,250 @@
+#Zadanie3
+class Samochod:
+  def __init__(self, p1, p2):
+    self.__marka=p1
+    self.__model=p2
+    
+  def getMarka(self):
+    return self.marka
+    
+  def getModel(self):
+    return self.model
+    
+class Kolo(Samochod):
+  __kolor=None
+  __glebokosc_bierznika=None
+  
+  def setKolor(self, kolor):
+    self.__kolor=kolor
+    
+  def setGlebokosc_bierznika(self,glebokosc_bierznika):
+    self.__glebokosc_bierznika=glebokosc_bierznika
+    
+  def poka_kolo(self):
+    print(self.__kolor+" "+self.__glebokosc_bierznika)
+    
+class Silnik(Samochod):
+  __dzwiek=None
+  __poroducent=None
+  
+  def setDzwiek(self, dzwiek):
+    self.__dzwiek=dzwiek
+    
+  def setPoroducent(self,poroducent):
+    self.__poroducent=poroducent
+    
+  def poka_silnik(self):
+    print(self.__dzwiek+" "+self.__poroducent)
+    
+class Radio(Samochod):
+  __model=None
+  __poroducent=None
+  
+  def setModel(self, model):
+    self.__model=model
+    
+  def setPoroducent(self, poroducent):
+    self.__poroducent=poroducent
+    
+  def poka_radio(self):
+    print(self.__model+" "+self.__poroducent)
+  
+kolo=Kolo("fiat", "FSO")
+kolo.setKolor("czarny")
+kolo.setGlebokosc_bierznika("5cm")
+kolo.poka_kolo()
+
+silnik=Silnik("fiat", "FSO")
+silnik.setDzwiek("brum")
+silnik.setPoroducent("Italiano SA")
+silnik.poka_silnik()
+
+radio=Radio("fiat", "FSO")
+radio.setModel("Max Radio")
+radio.setPoroducent("Italiano SA")
+radio.poka_radio()
+
+
+
+#Zadanie2
+#class D2:
+#  def __init__(self, p1, p2, p3):
+#    self.p1=p1
+#    self.p2=p2
+#    self.p3=p3
+#    
+#  def oblicz(self, other):
+#    d=((other.p1-self.p1)**2+(other.p2-self.p2)**2)**0.5
+#    return d
+#      
+#class D3(D2):
+#    
+#  def oblicz(self, other):
+#    d=((other.p1-self.p1)**2+(other.p2-self.p2)**2+(other.p3-self.p3)**2)**0.5
+#    return d
+#    
+#d21=D2(0,0,0)
+#d22=D2(2,2,2)
+#d31=D3(0,0,0)
+#d32=D3(2,2,2)
+#print(d21.oblicz(d22))
+#print(d31.oblicz(d32))
+      
+
+  
+
+
+
+#Zadanie1
+#class liczbaZespolona(object):
+#  def __init__(self, re, im):
+#    self.re=re
+#    self.im=im
+#    
+#  def setRe(self, re):
+#    self.re=re
+#    
+#  def setIm(self, im):
+#    self.im=im
+#    
+#  def __add__(self, other):
+#    re=self.re+other.re
+#    im=self.im+other.im
+#    return str(re)+"+"+str(im)+"i"
+#
+#  def __sub__(self, other):
+#    re=self.re-other.re
+#    im=self.im-other.im
+#    if(im>=0):
+#      return str(re)+"+"+str(im)+"i"
+#    else:
+#      return str(re)+"-"+str(im)+"i"
+#    
+#  def __mul__(self, other):
+#    re=self.re*other.re
+#    im1=self.re*other.im
+#    im2=self.im*other.re
+#    imim=self.im*other.im
+#    im1=im1+im2
+#    return str(re)+"+"+str(im1)+"i"
+#    
+#  def __truediv__(self, other):
+#    w1=self.re*other.re+self.im*other.im
+#    w2=other.re**2+other.im**2
+#    w3=self.im*other.re-self.re*other.im
+#    w4=w2
+#    re=w1/w2
+#    im=w3/w4
+#    return str(re)+"+"+str(im)+"i"
+#    
+#  def modul(self):
+#    mod=(self.re**2+self.im**2)**0.5
+#    if(mod<0):
+#      mod=mod*(-1)
+#    return mod
+#      
+#  def __eq__(self, other):
+#    if(self.re==other.re & self.im==other.im):
+#      return 1;
+#    else:
+#      return 0;
+#        
+#a=liczbaZespolona(1,2)
+#b=liczbaZespolona(1,2)
+#print(a+b)
+#print(a-b)
+#print(a*b)
+#print(a/b)
+#print(a==b)
+#print(a.modul())
+#print(b.modul())
+
+
+#class A(object):
+#  def __init__(self, zmienna):
+#    self.zmienna=zmienna
+  
+#  def __add__(self, other):
+#    return self.zmienna+other.zmienna
+    
+#a=A(5)
+#b=A(8)
+#print(a+b)
+
+
+
+
+#class A(object):
+#  def funkcja(self):
+#    print("Wywolanie A")
+    
+#class B(A):
+# def funkcja(self):
+#    print("Wywolanie B")
+#    super(B, self).funkcja()
+    
+#B().funkcja()
+
+
+
+
+#class Samochod:
+#  __kolor=None
+  
+#  def setKolor(self, kolor):
+#    self.__kolor=kolor
+    
+#class Osobowy(Samochod):
+#  marka="Mercedes"
+  
+#samochod=Osobowy()
+#samochod.setKolor("niebieski")
+#print("To jest %s %s " %(samochod._Samochod__kolor, samochod.marka))
+  
+
+
+
+
+#class Klasa:
+#  atr1=None
+#  __atr2=None
+  
+#  def setAtr2(self, zmienna):
+#    self.__atr2=zmienna
+  
+#  def setAtr3(self, zmienna):
+#    self.atr3=zmienna
+    
+#  def add(self):
+#    return self.atr1+self.__atr2+self.atr3
+    
+#klasa=Klasa()
+#klasa.atr1=3
+##klasa.setAtr2(3)
+#klasa._Klasa__atr2=3
+#klasa.setAtr3(4)
+#print(klasa.add())
+
+
+
+
+
+#class Przyklad:
+#  def metoda(self):
+#    print("Metoda")
+#  def metoda2(self):
+#    print("Metoda2")
+#    self.metoda()
+    
+#obiekt=Przyklad()
+#obiekt.metoda2()
+
+
+
+
+#class Przyklad:
+#  def metoda(self):
+#    print("Ala ma kota")
+    
+#obiekt=Przyklad()
+#obiekt.metoda()
