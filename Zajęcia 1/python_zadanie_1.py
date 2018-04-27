@@ -1,96 +1,135 @@
 #Zadanie 5
-#import os
-#def gen(a):
-#  for plik in os.listdir(a):
-#    print(plik)
-    
-#gen("C:\")
+n=input('Wprowadz liczbe liczb ')
+lista=[]
+
+i=0
+while(i<int(n)):
+	lista.append(input())
+	i=i+1
+
+lista.sort()
+
+kierunek=input('Wprowadz kierunek sortowania: 0-rosnaco, 1-malejaca')
+zakres=input('Podaj ilosc wypisywanych elementow')
+
+if(int(kierunek)==1):
+	lista.reverse()
+
+k=0
+for i in lista:
+	if(k<int(n)):
+		print(i)
+	k=k+1
+
 
 
 #Zadanie 4
-#punkty=[(1,1),(2,5),(-2,4),(-6,-6),(8,-9),(22,13),(-20,-40),(0,1)]
-#punkt=(0,0)
-#tab=[]
+#lista=['a','A','b','B','c','C','d','D','e','E','f','F','g','G','h','H','i','I','j','J','k','K','l','L','m','M','n','N','o','O','p','P','q','Q','r','R','s','S','t','T','u','U','v','V','w','W','x','X','y','Y','z','Z']
+#alfabet=''
+#skok=input('Wprowadz liczbe ')
 
-#def f1(p, punkt):
-#  a=(p[0]-punkt[0])**2+(p[1]-punkt[1])**2
-#  a=a**0.5
-#  return a
-
-#def f2(f, punkty, punkt, tab):
-#  for x in punkty:
-#    tab.append((f(x, punkt),x))
-
-#f2(f1,punkty, punkt, tab)
-#tab.sort()
-#print(tab)
+#l=1
+#for i in lista:
+#	if(l%skok==0):
+#		alfabet=alfabet+i
+#	l=l+1
+#print(alfabet)
 
 
 #Zadanie 3
-#liczba=[1,2,3,4,5,6,7,8,9,10]
-#po_warunku=[]
+#lista=['a','A','b','B','c','C','d','D','e','E','f','F','g','G','h','H','i','I','j','J','k','K','l','L','m','M','n','N','o','O','p','P','q','Q','r','R','s','S','t','T','u','U','v','V','w','W','x','X','y','Y','z','Z']
+#alfabet=''
 
-#def f1(n):
-#  if(n%2==1):
-#    return 0
+#for i in lista:
+#	alfabet=alfabet+i
+  
+#print(alfabet)
+
+#Zadanie 2
+#a=input('Wprowadz liczbe ')
+#b=input('Wprowadz liczbe ')
+#c=input('Wprowadz liczbe ')
+
+#if(a>b):
+#  if(a>c):
+#    print(a)
 #  else:
-#    return 1
-#
-#def f2(f1, liczba):
-#  for x in liczba:
-#    if(f1(x)==1):
-#      po_warunku.append(x)
-#
-#f2(f1, liczba)
-#print(po_warunku)
-
-
-#Zadanie 2 - awykonalne
-#n=input('Podaj liczbe wyrazow ciagu ')
-#fib=[]
-#fib.append(1)
-#fib.append(1)
-##tab=[int((((1+5**) for x in range(1,n+1)]
-#print(tab)
+#    print(c)
+#else:
+#  if(b>c):
+#    print(b)
+#  else:
+#    print(c)
 
 
 #Zadanie 1
-#napis=input('Podaj napis')
-#ls=[(slowo, len(slowo)) for slowo in napis.split()]
-#print(ls)
+#imie=input('Wprowadz imie')
+#nazwisko=input('Wprowadz nazwisko')
+#wiek=int(input('Wprowadz wiek'))
+
+#if(wiek>17):
+#  print('Czesc '+imie+' '+nazwisko+' jestes Pelnoletni')
+#else:
+#  print('Czesc '+imie+' '+nazwisko+' jestes Niepelnoletni')
+
+##############
+#lista=[1,2,3,'a',4,5]
+#lista[1]=8
+#print(lista)
+
+#krotka=[1,2,3,'a',4,5]
+#krotka[1]=8
+#print(krotka)
 
 
-
-#def generator(n):
-#  while n:
-#    print('Generator stop %d' %n)
-#    yield n
-#    print('Generator start %d' %n)
-#    n=n-1
-
-#for x in generator(5):
-#  print('Wywolanie %d' %x)
-##generator(5)
+#;
 
 
+#li=['a','b','c','d']
 
-#kwadrat=lambda x: x*x
-#print(kwadrat(2))
+#for i in range(len(li)):
+#  print(li[i])
 
+#for i in li:
+#  print(i)
 
+#i=0
+#while(i<5):
+#  print(i)
+#  i=i+1
 
+#;
 
-#def f1(n):
-#  def f2(x):
-#    return n-x
-#  return f2
+#a=2 
+#b=3
+#if(a>b):
+#  print('wieksze')
+#elif(a<b):
+#  print('mniejsze')
+#else:
+#  print('rowne')
 
-#res=f1(5)
-#print(res(10))
+#;
 
+#def suma(a,b):
+#  return a+b
 
+#l1=3
+#l2=4
 
+#print(suma(l1, l2))
 
-#liczby=range(0,20)
-#kwadraty=[x**2 for x in liczby]
-#print (kwadraty)
+#;
+
+#l1=3
+#l2=4.5
+#t1='6'
+
+#print(l1)
+#print(l2)
+#print(t1)
+
+#;
+
+#data=input('Wprowadz dane')
+#print(data)
