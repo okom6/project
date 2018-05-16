@@ -1,0 +1,1 @@
+print("mod"+ __name__)
