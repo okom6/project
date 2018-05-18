@@ -1,0 +1,128 @@
+import tkinter as tk
+from tkinter import font as tkF
+from tkinter import messagebox as tkMB
+
+root = tk.Tk()
+
+def showMsgBx():
+    tkMB.showinfo("Wywolanie", "KONIEC")
+
+
+def_fnt=tkF.nametofont("TkDefaultFont")
+def_fnt.configure(size=20)
+root.option_add("*Font", def_fnt)
+
+znak=""
+liczba1=0
+liczba2=0;
+prze=0
+zera=0
+byl=0
+
+def dodaj(var):
+    global liczba1
+    global liczba2
+    global zera
+    global prze
+
+    if(prze==0):
+        liczba1=liczba1*10+int(var)
+    else:
+        print(liczba1)
+        print(zera)
+        print(int(var)/(zera*10))
+        print(int(var))
+        liczba1 = liczba1 + int(var)/(10**zera)
+        zera=zera+1
+    lb.config(text=liczba1)
+
+def f_znak(var):
+    global liczba1
+    global liczba2
+    global znak
+    global zera
+    global prze
+    global byl
+
+    if(byl==0):
+        liczba2=liczba1
+        liczba1=0
+    prze=0
+    zera=0
+    znak=var
+
+def przecinek():
+    global prze
+    global zera
+
+    prze=1
+    zera=1
+
+def wynik():
+    global liczba1
+    global liczba2
+    global znak
+    global zera
+    global prze
+    global byl
+    byl=1
+    wyn=0
+
+    if(znak=="+"):
+        wyn=liczba2+liczba1
+    elif(znak=="-"):
+        wyn=liczba2-liczba1
+    elif(znak=="*"):
+        wyn=liczba2*liczba1
+    elif(znak=="/"):
+        wyn=liczba2/liczba1
+
+    liczba2=wyn
+    liczba1=0
+    lb.config(text=wyn)
+    #print(liczba2)
+    #print(liczba1)
+    #print(wyn)
+
+
+lb=tk.Label(root)
+
+bt1=tk.Button(root, text="0", fg="blue", command=lambda: dodaj(0))
+bt2=tk.Button(root, text="1", fg="blue", command=lambda: dodaj(1))
+bt3=tk.Button(root, text="2", fg="blue", command=lambda: dodaj(2))
+bt4=tk.Button(root, text="3", fg="blue", command=lambda: dodaj(3))
+bt5=tk.Button(root, text="4", fg="blue", command=lambda: dodaj(4))
+bt6=tk.Button(root, text="5", fg="blue", command=lambda: dodaj(5))
+bt7=tk.Button(root, text="6", fg="blue", command=lambda: dodaj(6))
+bt8=tk.Button(root, text="7", fg="blue", command=lambda: dodaj(7))
+bt9=tk.Button(root, text="8", fg="blue", command=lambda: dodaj(8))
+bt10=tk.Button(root, text="9", fg="blue", command=lambda: dodaj(9))
+
+bt11=tk.Button(root, text=",", fg="blue", command=przecinek)
+bt12=tk.Button(root, text="+", fg="blue", command=lambda: f_znak("+"))
+bt13=tk.Button(root, text="-", fg="blue", command=lambda: f_znak("-"))
+bt14=tk.Button(root, text="*", fg="blue", command=lambda: f_znak("*"))
+bt15=tk.Button(root, text="/", fg="blue", command=lambda: f_znak("/"))
+bt16=tk.Button(root, text="=", fg="blue", command=wynik)
+
+lb.grid(row=0, column=0, columnspan=4)
+
+bt1.grid(row=1, column=0)
+bt2.grid(row=1, column=1)
+bt3.grid(row=1, column=2)
+bt4.grid(row=1, column=3)
+bt5.grid(row=2, column=0)
+bt6.grid(row=2, column=1)
+bt7.grid(row=2, column=2)
+bt8.grid(row=2, column=3)
+bt9.grid(row=3, column=0)
+bt10.grid(row=3, column=1)
+bt11.grid(row=3, column=2)
+bt12.grid(row=3, column=3)
+bt13.grid(row=4, column=0)
+bt14.grid(row=4, column=1)
+bt15.grid(row=4, column=2)
+bt16.grid(row=4, column=3)
+
+
+root.mainloop()
