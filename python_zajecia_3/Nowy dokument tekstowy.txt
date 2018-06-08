@@ -248,3 +248,29 @@ radio.poka_radio()
     
 #obiekt=Przyklad()
 #obiekt.metoda()
+
+
+class D2:
+  def __init__(self, x, y):
+    self.x=x
+    self.y=y
+
+  def licz(self, inny):
+    d=((inny.x-self.x)**2+(inny.y-self.y)**2)**0.5
+    return d
+
+class D3(D2):
+  def __init__(self, x, y, z):
+    super(D3, self).__init__(x,y)
+    self.z=z
+
+  def licz(self, inny):
+    d=((inny.x-self.x)**2+(inny.y-self.y)**2+(inny.z-self.z)**2)**0.5
+    return d
+
+d21=D2(0,0)
+d22=D2(2,2)
+d31=D3(0,0,0)
+d32=D3(2,2,2)
+print(d21.licz(d22))
+print(d31.licz(d32))
